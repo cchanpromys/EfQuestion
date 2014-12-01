@@ -1,0 +1,24 @@
+# git ignore file
+_ReSharper.*/
+*.suo
+*.user
+*.dbproj.schemaview
+*.dbmdl
+*.onetoc2
+*.csproj.bak
+*.mswwsettings
+*log4net.log
+tenant.log*
+Genuit.Promys.DB.*/sql/debug/*
+*/bin/
+*/obj/
+TestResults*
+*.testsettings
+*.vsmdi
+us.stackdump
+Promys.5.1.ReSharper
+*.DotSettings
+*/.idea/
+*/_Upgrade*/
+PromysStatic/ReportRepository/Email/*
+*.log
