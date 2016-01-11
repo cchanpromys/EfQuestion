@@ -3,9 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EfCreateObj
 {
+    public enum SystemStatus
+    {
+        Active = 0,
+        Deleted = 1
+    }
+
     public class House
     {
         public int Id { get; set; }
+        public SystemStatus Status { get; set; }
+
         public virtual ICollection<Room> Rooms { get; set; }
         public virtual ICollection<Desk> Desks { get; set; }
     }
@@ -14,6 +22,7 @@ namespace EfCreateObj
     {
         public int Id { get; set; }
         public int HouseId { get; set; }
+        public SystemStatus Status { get; set; }
 
         [ForeignKey("HouseId")]
         public virtual House House { get; set; }
@@ -25,8 +34,8 @@ namespace EfCreateObj
         public int Id { get; set; }
         public int? RoomId { get; set; }
         public int? HouseId { get; set; }
-
         public int ChairId { get; set; }
+        public SystemStatus Status { get; set; }
 
         [ForeignKey("ChairId")]
         public virtual Chair Chair { get; set; }
@@ -42,6 +51,8 @@ namespace EfCreateObj
     {
         public int Id { get; set; }
         public decimal Width { get; set; }
+        public SystemStatus Status { get; set; }
+
         public virtual ICollection<Desk> Desks { get; set; }
     }
 }

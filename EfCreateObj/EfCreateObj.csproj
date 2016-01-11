@@ -49,14 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="Migrations\201601112019119_Init.cs" />
+    <Compile Include="Migrations\201601112019119_Init.Designer.cs">
+      <DependentUpon>201601112019119_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoftDeleteInterceptor.cs" />
+    <Compile Include="SoftDeleteQueryVisitor.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Pocos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\SoftDeleteFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601112019119_Init.resx">
+      <DependentUpon>201601112019119_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
